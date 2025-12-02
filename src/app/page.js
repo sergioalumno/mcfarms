@@ -1,9 +1,9 @@
-import Publicar from "@/componentes/publicar/publicar";
+import Landing from "./componentes/landing/landing";
 
 export default function Home() {
   return (
     <div>
-      <Publicar />
+      <Landing />
     </div>
   );
 }
