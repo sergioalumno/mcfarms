@@ -1,9 +1,9 @@
-import Landing from "./landing/landing";
+import Publicar from "./publicar";
 
 export default function Home() {
   return (
     <div>
-      <Landing />
+      <Publicar />
     </div>
   );
 }

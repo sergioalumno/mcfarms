@@ -1,9 +1,9 @@
-import Landing from "./landing/landing";
+import IniciarSesion from "./iniciarsesion";
 
 export default function Home() {
   return (
     <div>
-      <Landing />
+      <IniciarSesion />
     </div>
   );
 }
