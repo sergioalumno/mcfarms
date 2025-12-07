@@ -1,5 +1,4 @@
 import { Navbar } from "@/app/layout"
-import {  } from "@/app/layout"
 
 export default function editar() {
 
@@ -10,13 +9,13 @@ export default function editar() {
             <p>Nombre:</p>
             <input type="text" placeholder="Introduce tu nombre..." />
             <p>Dificultad:</p>
-            <select>
-                <option>Selecciona una dificultad</option>
-                <option>⭐</option>
-                <option>⭐⭐</option>
-                <option>⭐⭐⭐</option>
-                <option>⭐⭐⭐⭐</option>
-                <option>⭐⭐⭐⭐⭐</option>
+            <select required>
+                <option disabled selected>Selecciona una dificultad</option>
+                <option>★</option>
+                <option>★★</option>
+                <option>★★★</option>
+                <option>★★★★</option>
+                <option>★★★★★</option>
             </select>
             <p>Descricion</p>
             <textarea placeholder="Descripcion del proyecto..."></textarea>
