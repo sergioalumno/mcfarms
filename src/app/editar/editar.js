@@ -1,11 +1,12 @@
 import { Navbar } from "@/app/layout"
+import {  } from "@/app/layout"
 
-export default function Publicar() {
+export default function editar() {
 
     return(
         <div>
             <Navbar/>
-            <h1>Publicar proyecto</h1>
+            <h1>Editar proyecto</h1>
             <p>Nombre:</p>
             <input type="text" placeholder="Introduce tu nombre..." />
             <p>Dificultad:</p>
@@ -24,8 +25,9 @@ export default function Publicar() {
             <p>Archivo</p>
             <button>subir archivo</button>
             <br/>
+            <button>Eliminar proyecto</button>
             <button>Volver</button>
-            <button>Publicar</button>
+            <button>Guardar cambios</button>
         </div>
     )
 }
