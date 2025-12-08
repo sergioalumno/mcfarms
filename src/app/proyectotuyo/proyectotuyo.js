@@ -26,7 +26,7 @@ export default function Proyectotuyo() {
                 <button onClick={cachesambiaraeditar}>Guardar cambios</button>
                 
                 <select defaultValue={dificultad} onChange={(e) => setDificutad(e.target.value)}>
-                    <option value="★☆☆☆☆" >★</option>
+                    <option value="★☆☆☆☆">★</option>
                     <option value="★★☆☆☆">★★</option>
                     <option value="★★★☆☆">★★★</option>
                     <option value="★★★★☆">★★★★</option>
