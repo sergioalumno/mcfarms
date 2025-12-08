@@ -41,8 +41,4 @@ const [editar, setEditar] = useState(false)
             <button>Proyectos guardados</button>
         </div>
     )
-
-
-
 }
-
