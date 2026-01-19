@@ -1,3 +1,13 @@
+INFO
+PALETA DE COLORES
+#FFFFFF (Blanco): Iconos de la interfaz y algunos textos
+#EFDAAC (Arena): Iconos de la Barra superior
+#3C8527 (Verde): Sombra de las imágenes
+#8B8A8A (Gris claro): Color de la fuente
+#6B6562 (Gris oscuro): Fondo de las tarjetas
+#171615 (Gris fondo): Fondo de la pagina
+#E833C2 (Morado): Color de acento
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

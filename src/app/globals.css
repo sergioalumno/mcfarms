@@ -1,3 +1,68 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Custom colors /
+  --color-brand-900: #31582B;
+  --color-brand-600: #B5D9B0;
+  --color-brand-300: #B5D9B080; / 50% opacity /
+  --color-brand-100: #B5D9B04D; / 30% opacity /
+  --color-danger: #e3342f;
+
+  / Optional brand scale */
+  --color-arena_iconos: #EFDAAC;
+  --color-verde_sombra: #3C8527;
+  --color-grisclaro_fuente: #8B8A8A;
+  --color-grisoscuro_fondotarj: #6B6562;
+  --color-grisoscuro_fondo: #171615;
+  --color-morado_acentos: #E833C2;
+}
+
+/* 
+ESTILOS PREDETERMINADOS 
+Aqui usando id algo de css se coloca el codigo tailwind que se aplicara a todos los elementos que coincidan
+para asi evitar tener que duplicar varias veces el mismo codigo en componentes similares 
+como los botones
+*/
+
+h1 {
+  font-family: 'Fuente-mc', sans-serif;
+}
+
+body {
+  @apply text-grisclaro_fuente;
+  @apply bg-grisoscuro_fondo;
+  font-family: 'Noto-sans', sans-serif;
+}
+
+button#cancelar {
+  @apply text-white border-2 border-morado_acentos p-1 rounded-2xl hover:scale-120 duration-300;
+}
+
+button#confirmar {
+  @apply text-white border-2 bg-morado_acentos border-morado_acentos p-1 rounded-2xl hover:scale-120 duration-300;
+}
+
+@font-face {
+  font-family: 'Noto-sans';
+  src: url('/fonts/Noto-sans.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fuente-mc';
+  src: url('/fonts/Minecraftedit.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -40,3 +105,5 @@ a {
     color-scheme: dark;
   }
 }
+
+*/

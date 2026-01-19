@@ -2,14 +2,12 @@ export default function Landing() {
 
     return (
         <div>
-            <h1>MC Farms</h1>
-            <img src="logo.png"/>
-            <img src="flecha.png"/>
-            <img src="granjalanding.webp"/>
+            <h1 className="font-Fuente-mc">MC Farms</h1>
+            <img src="portada_landing.png"/>
 
             <p>Todo esto y mas aquí ¡Empieza ahora!</p>
-            <button>Iniciar Sesión</button>
-            <button>Registrase</button>
+            <button id="cancelar">Iniciar Sesión</button>
+            <button id="confirmar">Registrase</button>
         </div>
     )
 }
