@@ -19,11 +19,45 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
       </body>
     </html>
+  );
+}
+
+export function Navbar() {
+    return (
+    <div>
+      <img src="logo.png" width="50px"/>
+      <h1>MC Farms</h1>
+      <button>Publicar</button>
+      <select>
+        <option>Proyectos</option>
+        <option>Usuarios</option>
+      </select>
+      <input />
+      <button>Buscar</button>
+      <button>Tú perfil</button>
+    </div>
+  );
+}
+
+export function Footer() {
+    return (
+    <div>
+      <h3>MC Farms© - 2025</h3>
+      <img src="ig.png" width="50px"/>
+      <img src="x.png" width="50px"/>
+    </div>
+  );
+}
+
+export function Paginacion() {
+    return (
+    <div>
+      <button>&lt;</button>
+      <button>&gt;</button>
+    </div>
   );
 }
