@@ -1,9 +1,9 @@
-import Landing from "./landing/landing";
+import Busquedaproy from "./busquedaproyectos";
 
 export default function Home() {
   return (
     <div>
-      <Landing />
+      <Busquedaproy />
     </div>
   );
 }
