@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Landing() {
 
     return (
@@ -7,8 +9,12 @@ export default function Landing() {
            
             <div className="fixed bottom-6 right-6 text-right text-2xl">
                 <p className="font-titulo py-5">Todo esto y mas aquí ¡Empieza ahora!</p>
-                <button className="cancelar mx-2 text-3xl">Iniciar Sesión</button>
-                <button className="confirmar mx-2 text-3xl">Registrase</button>
+                <Link href="/iniciarsesion">
+                    <button className="cancelar mx-2 text-3xl">Iniciar Sesión</button>
+                </Link>
+                <Link href="/registro">
+                    <button className="confirmar mx-2 text-3xl">Registrase</button>
+                </Link>
             </div>
         </div>
     )

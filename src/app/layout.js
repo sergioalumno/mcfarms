@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,36 +29,87 @@ export default function RootLayout({ children }) {
 
 export function Navbar() {
     return (
-    <div>
-      <img src="logo.png" width="50px"/>
-      <h1>MC Farms</h1>
-      <button>Publicar</button>
-      <select>
-        <option>Proyectos</option>
-        <option>Usuarios</option>
-      </select>
-      <input />
-      <button>Buscar</button>
-      <button>Tú perfil</button>
+    <div className="bg-grisoscuro_fondotarj text-white px-6 py-2 flex items-center justify-between">
+      
+      <Link href="/home">
+        <div className="flex items-center gap-3 hover:scale-105 transition-transform">
+          <img src="logo.png" width="50px"/>
+          <h1 className="text-2xl">MC Farms</h1>
+        </div>
+      </Link>
+
+      <div className="flex items-center gap-6">
+        <Link href="/publicar">
+          <button className="hover:scale-110 transition-transform">
+            <img src="/upload.png" alt="Usuario" className="w-8 h-8" />
+          </button>
+        </Link>
+
+        <div className="flex items-stretch rounded-md overflow-hidden">
+          <select className="bg-white text-black px-2 rounded-l-md border-r border-white outline-none">
+            <option>Proyectos</option>
+            <option>Usuarios</option>
+          </select>
+          <input type="text" className="bg-white rounded-r-md px-3 py-1 w-64 text-black text-sm outline-none"/>
+        </div>
+        
+        <button className="hover:scale-110 transition-transform">
+          <img src="/search.png" alt="Usuario" className="w-8 h-8" />
+        </button>
+        
+        <Link href="/tuperfil">
+        <button className="hover:scale-110 transition-transform">
+          <img src="/person-circle.png" alt="Usuario" className="w-8 h-8" />
+        </button>
+        </Link>
+      </div>
     </div>
   );
 }
 
 export function Footer() {
     return (
-    <div>
-      <h3>MC Farms© - 2025</h3>
-      <img src="ig.png" width="50px"/>
-      <img src="x.png" width="50px"/>
+    <div className="bg-grisoscuro_fondotarj fixed bottom-0 w-full text-white py-3 px-8 flex items-center justify-end" >
+      <h3 className="font-bold text-lg absolute left-1/2 -translate-x-1/2">MC Farms© - 2025</h3>
+
+      <div className="flex items-center">
+        <img src="ig.png" width="50px" className="hover:opacity-80 transition-opacity"/>
+        <img src="x.png" width="50px" className="hover:opacity-80 transition-opacity"/>
+      </div>
     </div>
   );
 }
 
 export function Paginacion() {
     return (
-    <div>
-      <button>&lt;</button>
-      <button>&gt;</button>
+    <div className="flex justify-center items-center mt-8 mb-15 absolute bottom-12 w-full flex justify-center">
+      <div className="rounded-md overflow-hidden shadow-lg ">
+
+        <button className="px-4 py-2 bg-grisoscuro_fondotarj text-white hover:bg-grisoscuro_fondotarj/40 transition-colors">
+          &lt;
+        </button>
+
+        <button className="px-4 py-2 bg-morado_acentos text-white">
+          1
+        </button>
+
+        <button className="px-4 py-2 bg-grisoscuro_fondotarj text-white hover:bg-grisoscuro_fondotarj/40 transition-colors">
+          2
+        </button>
+
+        <button className="px-4 py-2 bg-grisoscuro_fondotarj text-white hover:bg-grisoscuro_fondotarj/40 transition-colors">
+          3
+        </button>
+
+        <button className="px-4 py-2 bg-grisoscuro_fondotarj text-white hover:bg-grisoscuro_fondotarj/40 transition-colors">
+          4
+        </button>
+
+        <button className="px-4 py-2 bg-grisoscuro_fondotarj text-white hover:bg-grisoscuro_fondotarj/40 transition-colors">
+          &gt;
+        </button>
+
+      </div>
     </div>
   );
 }
