@@ -69,12 +69,12 @@ export function Navbar() {
 
 export function Footer() {
     return (
-    <div className="bg-grisoscuro_fondotarj fixed bottom-0 w-full text-white py-3 px-8 flex items-center justify-end" >
+    <div className="bg-grisoscuro_fondotarj w-full text-white py-3 px-8 mt-10 flex items-center justify-end" >
       <h3 className="font-bold text-lg absolute left-1/2 -translate-x-1/2">MC Farms© - 2025</h3>
 
       <div className="flex items-center">
         <img src="ig.png" width="50px" className="hover:opacity-80 transition-opacity"/>
-        <img src="x.png" width="50px" className="hover:opacity-80 transition-opacity"/>
+        <img src="x.png" width="50px" className="hover:opacity-80 transition-opacity h-10 w-18"/>
       </div>
     </div>
   );
@@ -82,8 +82,8 @@ export function Footer() {
 
 export function Paginacion() {
     return (
-    <div className="flex justify-center items-center mt-8 mb-15 absolute bottom-12 w-full flex justify-center">
-      <div className="rounded-md overflow-hidden shadow-lg ">
+    <div className="flex justify-center items-center my-8">
+      <div className="rounded-md overflow-hidden shadow-lg">
 
         <button className="px-4 py-2 bg-grisoscuro_fondotarj text-white hover:bg-grisoscuro_fondotarj/40 transition-colors">
           &lt;
