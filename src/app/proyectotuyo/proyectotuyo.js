@@ -26,7 +26,7 @@ export default function Proyectotuyo() {
 
                         <div>
                         <p className="text-xl font-bold block mb-2">Dificultad:</p>
-                        <select defaultValue={dificultad} onChange={(e) => setDificutad(e.target.value)}className="w-full p-3 rounded-lg bg-white text-black outline-none appearance-none cursor-pointer">
+                        <select defaultValue={dificultad} onChange={(e) => setDificutad(e.target.value)}className="w-full p-3 rounded-lg bg-white text-black outline-none appearance-none">
                             <option value="★☆☆☆☆">★☆☆☆☆</option>
                             <option value="★★☆☆☆">★★☆☆☆</option>
                             <option value="★★★☆☆">★★★☆☆</option>

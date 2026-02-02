@@ -35,7 +35,7 @@ function RenderizarTarjeta({objtarjeta}) {
         <div className="bg-grisoscuro_fondotarj text-white font-bold p-8 rounded-4xl flex flex-col items-center hover:scale-105 transition-transform">
 
             <div className="border-4 border-verde_sombra rounded-2xl overflow-hidden mb-3">
-                <img src={objtarjeta.img} className="w-full object-cover"/>
+                <img src={objtarjeta.img} className="w-full"/>
             </div>
             <div className="text-center">
                 <p className="text-lg">{objtarjeta.nombre}</p>

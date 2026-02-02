@@ -7,7 +7,7 @@ export default function Perfildeusuario() {
                 <div className="w-[95%] mx-auto">
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
                         <div className="shrink-0 w-32 h-32 md:w-60 md:h-60 overflow-hidden">
-                            <img src="pfp.png" className="w-full h-full object-cover"/>
+                            <img src="person-circle-w.png" className="w-full h-full object-cover"/>
                         </div>
 
                         <div className="flex-grow text-center md:text-left">
