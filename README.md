@@ -2,7 +2,8 @@ MCFarms
 DESCRIPCION
 MCFarms es un proyecto que es un repositorio de granjas de minecraft tecnico para que los usuarios puedan guardar en la nuebe y compartir sus creaciones con otros jugadores
 
-El proyecto se lanza de la siguiente mmanera:
+INSTRUCCIONES
+El proyecto se lanza de la siguiente manera:
 Instalar Node.js
 Instalar un IDE yo he usado Visual Studio
 
@@ -12,6 +13,10 @@ Despues el npm run dev te mostrara en la terminal la direccion de localhost a la
 Para acceder a las distintas paginas simplemente escribe en la direccion del navegador el nombre de la carpeta a la que quieres navegar
 
 INFO
+TECNOLOGIAS DE ESTILOS USADAS
+    - Tailwind
+    - CSS
+
 PALETA DE COLORES
 #FFFFFF (Blanco): Iconos de la interfaz y algunos textos
 #EFDAAC (Arena): Iconos de la Barra superior

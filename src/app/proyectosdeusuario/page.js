@@ -1,9 +1,13 @@
 import Proyectosdeusuario from "./proyectosdeusuarios";
+import { Navbar, Paginacion, Footer } from "@/app/layout"
 
 export default function Home() {
   return (
     <div>
-      <Proyectosdeusuario />
+      <Navbar/>
+      <Proyectosdeusuario/>
+      <Paginacion/>
+      <Footer/>
     </div>
   );
 }
