@@ -80,11 +80,11 @@ function RenderizarUsuario({objusuario}) {
                     <img src={objusuario.foto_perfil || '/person-circle-w.png'} className="w-full h-full rounded-full object-cover sm:w-80" />
                 </div>
 
-                <div className="text-2xl font-bold text-white flex flex-col">
-                    <p className="mb-5">
+                <div className="text-2xl flex flex-col">
+                    <p className="mb-5 font-bold">
                         {objusuario.nombre}
                     </p>
-                    <p>
+                    <p className="break-all">
                         {objusuario.biografia || "Sin biografía..."}
                     </p>
                 </div>

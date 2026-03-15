@@ -207,7 +207,7 @@ export default function Perfil() {
                             <img src={datosPerfil?.foto_perfil || '/person-circle-w.png'} className="w-full h-full object-cover"/>
                         </div>
 
-                        <div className="flex-grow text-center md:text-left w-full mt-4 md:mt-0">
+                        <div className="grow text-center md:text-left w-full mt-4 md:mt-0">
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
                                 <h1 className="text-4xl text-white font-bold">{datosPerfil?.nombre || "Usuario"}</h1>
                                 
