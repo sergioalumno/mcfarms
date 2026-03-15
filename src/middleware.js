@@ -22,22 +22,15 @@ export async function middleware(request) {
   )
 
   const { data: { user } } = await supabase.auth.getUser()
-
-  // --- LA PUERTA BLINDADA ---
-  
-  // 1. Define aquí las páginas donde SÍ pueden entrar los que no han iniciado sesión
-  // (Normalmente tu página principal de login/registro)
-  const rutasPublicas = ['/','/iniciarsesion','/registro'] // Si tu login está en otra ruta, añádela como '/login'
+  const rutasPublicas = ['/','/iniciarsesion','/registro'] 
   const esRutaPublica = rutasPublicas.includes(request.nextUrl.pathname)
 
-  // 2. Si NO está logueado y quiere entrar a una ruta privada (ej: /home) -> Echarlo a '/'
   if (!user && !esRutaPublica) {
     const url = request.nextUrl.clone()
     url.pathname = '/' 
     return NextResponse.redirect(url)
   }
 
-  // 3. (Opcional pero genial) Si YA está logueado y va al login -> Mandarlo a /home directamente
   if (user && esRutaPublica) {
     const url = request.nextUrl.clone()
     url.pathname = '/home'
