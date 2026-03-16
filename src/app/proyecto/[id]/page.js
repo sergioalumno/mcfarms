@@ -294,7 +294,7 @@ export default function Proyecto({ params }) {
                                             onClick={handleEliminarAdmin}
                                             title="[ADMIN] Eliminar publicación"
                                         >
-                                            <img src="/trash.png" className="h-10 hover:scale-110 transition-transform drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]" alt="Eliminar publicación" />
+                                            <img src="/trash.png" className="h-10 hover:scale-110 transition-transform" alt="Eliminar publicación" />
                                         </button>
                                     )}
                                 </div>
