@@ -1,10 +1,10 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import Paginacion from "../Paginacion" 
 
-export default function Proyectosdeusuario() {
+function ListaProyectosUsuario() {
     const searchParams = useSearchParams()
     const targetUserId = searchParams.get("id")
     const [proyectos, setProyectos] = useState([])
@@ -47,12 +47,17 @@ export default function Proyectosdeusuario() {
     }, [targetUserId, paginaActual])
 
     if (!targetUserId) return <div className="min-h-screen text-white flex justify-center py-20 text-2xl">Error: Usuario no especificado.</div>
+
     return(
         <div className="min-h-screen flex flex-col items-center py-10">
             <div className="w-[95%] mx-auto">
                 <div className="flex items-center justify-between mb-10">
                     <div className="w-20 items-center aspect-square md:w-full gap-8 md:h-24 flex">
-                        <img src={perfilUsuario?.foto_perfil || '/person-circle-w.png'} className="md:h-30 rounded-full"/>
+                        <img 
+                            src={perfilUsuario?.foto_perfil || '/person-circle-w.png'} 
+                            className="md:h-30 rounded-full" 
+                            alt="perfil"
+                        />
                         <h1 className="text-white text-3xl">Proyectos de {perfilUsuario?.nombre}</h1>
                     </div>
                     <button onClick={() => window.history.back()} className="cancelar w-[20%] h-full text-2xl">Volver</button>
@@ -67,7 +72,11 @@ export default function Proyectosdeusuario() {
                                 <p className="text-white text-2xl text-center mt-10">Aún no hay proyectos publicados.</p>
                             ) : (
                                 proyectos.map(tarjeta => (
-                                    <RenderizarTarjeta key={tarjeta.id} objtarjeta={tarjeta} creador={perfilUsuario?.nombre} />
+                                    <RenderizarTarjeta 
+                                        key={tarjeta.id} 
+                                        objtarjeta={tarjeta} 
+                                        creador={perfilUsuario?.nombre} 
+                                    />
                                 ))
                             )}
                         </div>
@@ -81,9 +90,17 @@ export default function Proyectosdeusuario() {
                         )}
                     </>
                 )}
-                    
             </div>        
         </div>
+    )
+}
+
+
+export default function Proyectosdeusuario() {
+    return (
+        <Suspense fallback={<div className="min-h-screen text-white flex justify-center py-20 text-2xl">Cargando página de proyectos...</div>}>
+            <ListaProyectosUsuario />
+        </Suspense>
     )
 }
 
