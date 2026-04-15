@@ -1,10 +1,10 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import Paginacion from "../Paginacion" 
 
-export default function Favoritosdeusuario() {
+function ContenidoFavoritos() {
     const searchParams = useSearchParams()
     const targetUserId = searchParams.get('id')
     const [favoritos, setFavoritos] = useState([])
@@ -24,7 +24,6 @@ export default function Favoritosdeusuario() {
         cargarPerfil()
     }, [targetUserId])
 
-    
     useEffect(() => {
         if (!targetUserId) return;
         async function cargarFavoritos() {
@@ -50,10 +49,9 @@ export default function Favoritosdeusuario() {
     return(
         <div className="min-h-screen flex flex-col items-center py-10">
             <div className="w-[95%] mx-auto">
-
                 <div className="flex items-center justify-between mb-10">
                     <div className="w-20 items-center aspect-square md:w-full gap-8 md:h-24 flex">
-                        <img src={perfilUsuario?.foto_perfil || '/person-circle-w.png'} className="rounded-full md:h-30"/>
+                        <img src={perfilUsuario?.foto_perfil || '/person-circle-w.png'} className="rounded-full md:h-30" alt="perfil"/>
                         <h1 className="text-white text-3xl">Guardados de {perfilUsuario?.nombre}</h1>
                     </div>
                     <button onClick={() => window.history.back()} className="cancelar w-[20%] h-full text-2xl">Volver</button>
@@ -82,9 +80,17 @@ export default function Favoritosdeusuario() {
                         )}
                     </>
                 )}
-
             </div>        
         </div>
+    )
+}
+
+// --- Este es el componente que Next.js buscará para el build ---
+export default function Favoritosdeusuario() {
+    return (
+        <Suspense fallback={<div className="min-h-screen text-white flex justify-center py-20 text-2xl">Cargando...</div>}>
+            <ContenidoFavoritos />
+        </Suspense>
     )
 }
 
