@@ -21,7 +21,7 @@ function ContenidoBusqueda() {
         async function buscar() {
             setCargando(true)
             try {
-                // Aquí sigues usando tu archivo route (/api/buscar)
+                
                 const res = await fetch(`/api/buscar?tipo=proyectos&q=${query}&page=${paginaActual}`)
                 if (res.ok) {
                     const data = await res.json()
@@ -66,10 +66,10 @@ function ContenidoBusqueda() {
     )
 }
 
-// --- ESTE ES EL COMPONENTE QUE EXPORTAS (El que arregla el error) ---
+
 export default function BusquedaProyectos() {
     return (
-        // El Suspense "atrapa" el hook useSearchParams() del hijo
+        
         <Suspense fallback={<div className="text-white text-center py-20">Cargando buscador...</div>}>
             <ContenidoBusqueda />
         </Suspense>

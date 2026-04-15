@@ -85,7 +85,7 @@ function ContenidoFavoritos() {
     )
 }
 
-// --- Este es el componente que Next.js buscará para el build ---
+
 export default function Favoritosdeusuario() {
     return (
         <Suspense fallback={<div className="min-h-screen text-white flex justify-center py-20 text-2xl">Cargando...</div>}>

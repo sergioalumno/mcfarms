@@ -1,10 +1,10 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import Paginacion from "../Paginacion" 
 
-export default function BusquedaUsua() {
+function ContenidoBusquedaUsua() {
     const searchParams = useSearchParams()
     const query = searchParams.get('q')
     const [usuarios, setUsuarios] = useState([])
@@ -21,10 +21,10 @@ export default function BusquedaUsua() {
         async function buscar() {
             setCargando(true)
             try {
+                
                 const res = await fetch(`/api/buscar?tipo=usuarios&q=${query}&page=${paginaActual}`)
                 if (res.ok) {
                     const data = await res.json()
-                    
                     setUsuarios(data.resultados || [])
                     setTotalPaginas(data.totalPaginas || 1)
                 }
@@ -69,6 +69,15 @@ export default function BusquedaUsua() {
                 )}
             </div>
         </div>
+    )
+}
+
+
+export default function BusquedaUsua() {
+    return (
+        <Suspense fallback={<div className="text-white text-center py-20">Cargando búsqueda de usuarios...</div>}>
+            <ContenidoBusquedaUsua />
+        </Suspense>
     )
 }
 
