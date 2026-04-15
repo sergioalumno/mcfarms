@@ -1,10 +1,10 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import Paginacion from "../Paginacion"
 
-export default function BusquedaProyectos() {
+function ContenidoBusqueda() {
     const searchParams = useSearchParams()
     const query = searchParams.get('q')
     const [resultados, setResultados] = useState([])
@@ -16,17 +16,15 @@ export default function BusquedaProyectos() {
         setPaginaActual(1);
     }, [query]);
 
-    
     useEffect(() => {
         if (!query) return;
         async function buscar() {
             setCargando(true)
             try {
-                
+                // Aquí sigues usando tu archivo route (/api/buscar)
                 const res = await fetch(`/api/buscar?tipo=proyectos&q=${query}&page=${paginaActual}`)
                 if (res.ok) {
                     const data = await res.json()
-                    
                     setResultados(data.resultados)
                     setTotalPaginas(data.totalPaginas)
                 }
@@ -41,7 +39,7 @@ export default function BusquedaProyectos() {
 
     if (!query) return <div className="min-h-screen text-white flex justify-center py-20 text-2xl">Por favor, ingresa un término de búsqueda.</div>
 
-    return(
+    return (
         <div className="min-h-screen flex flex-col items-center py-10">
             <div className="w-[95%] mx-auto">
                 <h1 className="text-4xl mb-10 text-white">Resultados de proyectos para: "{query}"</h1>
@@ -65,6 +63,16 @@ export default function BusquedaProyectos() {
                 )}
             </div>        
         </div>
+    )
+}
+
+// --- ESTE ES EL COMPONENTE QUE EXPORTAS (El que arregla el error) ---
+export default function BusquedaProyectos() {
+    return (
+        // El Suspense "atrapa" el hook useSearchParams() del hijo
+        <Suspense fallback={<div className="text-white text-center py-20">Cargando buscador...</div>}>
+            <ContenidoBusqueda />
+        </Suspense>
     )
 }
 
